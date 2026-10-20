@@ -1,0 +1,89 @@
+openapi: 3.0.0
+info:
+  title: API Protheus 
+  description: API Protheus Documentação
+  version: 1.0.0
+  termsOfService: https://coroa.com.br/politica-de-privacidade/
+  contact:
+    name: Grupo Coroa 
+    url: https://coroa.com.br/fale-conosco/
+    email: sac@coroa.com.br
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: "http://189.50.2.244:8155/rest/"
+    description: Development server
+  - url: 'http://189.50.2.244:8370/rest/'
+    description: Production server
+tags:
+  - name: Produto
+  - name: Fornecedor
+  - name: Transportadora
+  - name: GrupoDeProdutos
+  # - name: Natureza
+  # - name: CentroDeCusto
+  # - name: CondicaoDePagamento
+  # - name: LocaisDeEstoque
+  # - name: PedidoDeCompra
+  # - name: SolicitacaoDeCompra
+  # - name: UnidadeDeMedida
+  # - name: ContaContabil
+
+security:
+  - bearerAuth: []
+
+paths:
+  /api/v1/produto:
+    $ref: './paths/produto/noParameters.yaml'
+
+  /api/v1/fornecedor:
+    $ref: './paths/fornecedor/noParameters.yaml'
+
+  /api/v1/transportadora:
+    $ref: './paths/transportadora/noParameters.yaml'
+
+  /api/v1/grupoDeProdutos:
+    $ref: './paths/grupoDeProdutos/noParameters.yaml'
+
+  
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    Produto:
+      $ref: "./paths/produto/schemas/SB1+SB5.yaml"
+
+    Fornecedor:
+      $ref: "./paths/fornecedor/schemas/SA2.yaml"
+
+    Transportadora:
+      $ref: "./paths/transportadora/schemas/SA4.yaml"
+
+    GrupoDeProdutos:
+      $ref: "./paths/grupoDeProdutos/schemas/SBM.yaml"
+
+  responses:
+    UnauthorizedError:
+      description: Authentication information is missing or invalid
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Unauthorized"
+  parameters:
+    fornecedorId:
+      name: id
+      in: path
+      required: true
+      description: The ID of the user to retrieve
+      schema:
+        type: integer
+        example: 1
