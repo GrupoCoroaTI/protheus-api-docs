@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
-  title: API Protheus 
-  description: API Protheus Documentação
+  title: API Coroa | TOTVS Protheus
+  description: Documentação técnica das APIs de integração com o ERP TOTVS Protheus da Coroa.
   version: 1.0.0
   termsOfService: https://coroa.com.br/politica-de-privacidade/
   contact:
