@@ -111,4 +111,4 @@ components:
       $ref: "./paths/solicitacaoDeCompra/schemas/SC1.yaml"
 
     PedidoDeCompra:
-      $ref: "./paths/pedidoDeCompra/schemas/SE4.yaml"
+      $ref: "./paths/pedidoDeCompra/schemas/SC7.yaml"
