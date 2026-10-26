@@ -155,7 +155,7 @@ post:
                   id:
                     type: number
                     example: 00001
-                  C5_NUM:
+                  C1_NUM:
                     type: string
                     example: 000001
     "400":
@@ -249,7 +249,7 @@ put:
                   id:
                     type: number
                     example: 00001
-                  C5_NUM:
+                  C1_NUM:
                     type: string
                     example: 000001
     "400":
