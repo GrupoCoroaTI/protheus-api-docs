@@ -158,6 +158,12 @@ post:
                   C7_NUM:
                     type: string
                     example: 000001
+                  C7_FORNECE:
+                    type: string
+                    example: 000001
+                  C7_LOJA:
+                    type: string
+                    example: 01
     "400":
       description: Invalid input
       content:
@@ -252,6 +258,12 @@ put:
                   C7_NUM:
                     type: string
                     example: 000001
+                  C7_FORNECE:
+                    type: string
+                    example: 000001
+                  C7_LOJA:
+                    type: string
+                    example: 01
     "400":
       description: Invalid input
       content:
@@ -314,6 +326,13 @@ delete:
       schema:
         type: string
         example: "000001"
+    - name: "item"
+      in: query
+      description: Item do pedido de compra
+      required: false
+      schema:
+        type: string
+        example: "0001"
   responses:
     "200":
       description: Successful response
@@ -340,6 +359,15 @@ delete:
                   C7_NUM:
                     type: string
                     example: 000001
+                  C7_ITEM:
+                    type: string
+                    example: 0001
+                  C7_FORNECE:
+                    type: string
+                    example: 000001
+                  C7_LOJA:
+                    type: string
+                    example: 01
     "400":
       description: Invalid input
       content:
