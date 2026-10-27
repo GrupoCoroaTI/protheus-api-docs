@@ -209,7 +209,7 @@ post:
 put:
   tags:
     - PedidoDeCompra
-  summary: EndPoint para alterar um Pedido de compra pelo código
+  summary: EndPoint para alterar um pedido de compra pelo código
   operationId: UpdatePedidoDeCompra
   parameters:
     - name: "tenantId"
@@ -218,7 +218,7 @@ put:
       required: true
       schema:
         type: string
-        example: 01,0101
+        example: 01,01
     - name: "codigo"
       in: query
       description: Número do pedido de compra
@@ -309,7 +309,7 @@ put:
 delete:
   tags:
     - PedidoDeCompra
-  summary: EndPoint para deletar uma Pedido de compra pelo código
+  summary: EndPoint para deletar uma pedido de compra pelo código
   operationId: deletePedidoDeCompraById
   parameters:
     - name: "tenantId"
@@ -318,7 +318,7 @@ delete:
       required: true
       schema:
         type: string
-        example: 01,0101
+        example: 01,01
     - name: "codigo"
       in: query
       description: Número do pedido de compra
